@@ -21,7 +21,7 @@ def add_book():
         "author": author,
         "genre": genre,
         "year": year,
-        "read": read  # Add a "read" field to track if the book has been read
+        "read": read  
     }
 
     collection.insert_one(book)
@@ -79,8 +79,8 @@ def delete_book():
 
 # Function to display statistics
 def display_statistics():
-    total_books = collection.count_documents({})  # Total number of books
-    read_books = collection.count_documents({"read": True})  # Number of books marked as read
+    total_books = collection.count_documents({})  
+    read_books = collection.count_documents({"read": True})  
 
     if total_books > 0:
         percentage_read = (read_books / total_books) * 100
